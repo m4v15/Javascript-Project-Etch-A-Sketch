@@ -21,12 +21,19 @@ function refreshGrid() {
 $(document).ready(function () {
     createGrid(16);
     $(".grid").mouseover(function () {
-        $(this).css("background-color", "black");
+        $(this).css("background-color", randColor());
     });
     $(".newGrid").click(function () {
         refreshGrid();
         $(".grid").mouseover(function () {
-            $(this).css("background-color", "black");
+            $(this).css("background-color", randColor());
         });
     });
 });
+function randColor(){
+    let r= Math.floor(Math.random()*250);
+    let g= Math.floor(Math.random()*250);
+    let b= Math.floor(Math.random()*250) ;
+        
+    return "rgb("+r+","+g+","+(b*0.10)+")";
+};
